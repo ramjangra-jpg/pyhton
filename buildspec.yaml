@@ -1,32 +1,21 @@
-# Buildspec Reference Doc: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
-
 version: 0.2
-
 phases:
   install:
     commands:
-      - echo "[+] Scanning for security vulnerability within dependencies"
-      # - pipenv check (if pipenv is installed and a Pipfile is in place)
-      # - Alternatively: https://www.owasp.org/index.php/OWASP_Dependency_Check
-  pre_build:
-    commands:
-      - pip install pytest requests
-      - echo "[+] Running tests..."
-      - python -m pytest tests/ -v
-  build:
-    commands:
-      - echo "[+] Installing dependencies...."
-      - pip install -r requirements.txt -t hello_world/build/
-      - cp hello_world/*.py hello_world/build/
-  post_build:
-    commands:
-      - echo "SAM packaging completed on `date`"
+      - echo "[+] Hello"
 
-artifacts:
-  files:
-    - packaged.yaml
-  discard-paths: yes
+    pre_build:
+      commands:
+        - echo "[+] Running tests..."
 
-cache:
-  paths:
-    - '/root/.cache/pip'
+      build:
+        commands:
+          - pip install -r requirements.txt
+      
+        post_build:
+          commands:
+            - echo "Packaging Completed on `data`"
+
+            artifacts:
+              files:
+                 - '**/*'
