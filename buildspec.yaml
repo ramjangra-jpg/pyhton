@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo apt install python3-pip
+      
 
     pre_build:
       commands:
@@ -11,7 +11,7 @@ phases:
 
       build:
         commands:
-          - pip install -r requirements.txt
+          - pip3 install -r requirements.txt
       
         post_build:
           commands:
