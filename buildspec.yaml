@@ -16,7 +16,4 @@ phases:
         post_build:
           commands:
             - echo "Packaging Completed on `data`"
-
-            artifacts:
-              files:
                  
