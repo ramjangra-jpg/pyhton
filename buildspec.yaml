@@ -2,11 +2,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "[+] Hello"
+      - sudo apt install python3-pip
 
     pre_build:
       commands:
         - echo "[+] Running tests..."
+
 
       build:
         commands:
@@ -18,3 +19,4 @@ phases:
 
             artifacts:
               files:
+                 
